@@ -4,3 +4,5 @@ package.json
 assets/bg-plexus-tmp.jpg
 assets/bg-plexus.jpg
 assets/og-image-raw.png
+.DS_Store
+**/.DS_Store

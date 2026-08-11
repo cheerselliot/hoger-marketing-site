@@ -1,5 +1,5 @@
 import { DateTime } from "https://cdn.jsdelivr.net/npm/luxon@3.5.0/+esm";
-import { initPlexusBackground } from "./plexus-bg.js?v=3";
+import { initPlexusBackground } from "./plexus-bg.js?v=4";
 
 const cfg = window.__HOGER__ || {};
 

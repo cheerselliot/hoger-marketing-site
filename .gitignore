@@ -1,0 +1,6 @@
+node_modules/
+package-lock.json
+package.json
+assets/bg-plexus-tmp.jpg
+assets/bg-plexus.jpg
+assets/og-image-raw.png

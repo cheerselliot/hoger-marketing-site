@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoger — Five minutes today. Sharper recall tomorrow.</title>
+  <meta name="description" content="Hoger turns your meetings, messages, and emails into a short daily quiz—then brings key details back before you forget them. Start with a 30-day free trial.">
+  <link rel="canonical" href="https://hoger.ai/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hoger.ai/">
+  <meta property="og:title" content="Hoger — Five minutes today. Sharper recall tomorrow.">
+  <meta property="og:description" content="Hoger turns your meetings, messages, and emails into a short daily quiz—then brings key details back before you forget them.">
+  <meta property="og:image" content="https://hoger.ai/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://hoger.ai/">
+  <meta name="twitter:title" content="Hoger — Five minutes today. Sharper recall tomorrow.">
+  <meta name="twitter:description" content="Hoger turns your meetings, messages, and emails into a short daily quiz—then brings key details back before you forget them.">
+  <meta name="twitter:image" content="https://hoger.ai/assets/og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://us.i.posthog.com">
+  <link rel="preload" href="assets/styles.css" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-brand-400: #10b981;
+      --color-text-primary: #f0fdf4;
+      --color-text-secondary: #d1fae5;
+      --header-bg: rgba(0, 0, 0, 0.72);
+      --header-border: rgba(16, 185, 129, 0.22);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Manrope", system-ui, sans-serif;
+      background: transparent;
+      color: var(--color-text-primary);
+      line-height: 1.6;
+    }
+    .brand-wordmark { font-family: "Syne", system-ui, sans-serif; font-weight: 700; }
+    .site-header {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: var(--header-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--header-border);
+      border-radius: 2rem;
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 75%;
+      max-width: 1200px;
+    }
+    .logo { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; color: inherit; }
+    .logo img { height: 32px; width: 32px; }
+    .brand-wordmark { font-size: 1.35rem; }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 6rem;
+    }
+    .hero-brand .brand-wordmark { font-size: clamp(2.5rem, 8vw, 4.5rem); }
+    .hero h1 { font-size: clamp(1.75rem, 4.5vw, 2.65rem); margin: 1rem 0; }
+    .hero p { color: var(--color-text-secondary); max-width: 36rem; margin: 0 auto 2rem; }
+  </style>
+
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <script>
+    window.__HOGER__ = {
+      site: "hoger",
+      hostname: location.hostname,
+      posthogKey: "phc_Ju4K4bBXyI79wej0tzGRdMnJTYovgalsSVigfm0clOJ",
+      posthogHost: "https://us.i.posthog.com",
+      redditPixelId: "",
+      waitlistSuccess: "You're on the list. We'll keep you posted."
+    };
+  </script>
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true">
+    <canvas id="plexus-canvas"></canvas>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="logo" href="#hero" aria-label="Hoger home">
+      <img src="logo.svg" alt="" width="32" height="32" loading="eager">
+      <span class="brand-wordmark">Hoger</span>
+    </a>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">☰</button>
+    <div class="nav-overlay" aria-hidden="true"></div>
+    <nav id="primary-nav" class="nav">
+      <a href="#how">How it works</a>
+      <a href="#demo">Demo</a>
+      <a href="#launch">Launch</a>
+      <a href="#pricing">Pricing</a>
+      <a class="button" href="#waitlist" data-track-cta="nav_waitlist">Join waitlist</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section--net">
+      <div class="hero-content">
+        <div class="hero-brand">
+          <img src="logo.svg" alt="" class="brand-logo-large" width="56" height="56">
+          <p class="brand-wordmark">Hoger</p>
+        </div>
+        <p class="promo-badge">Five minutes today. Sharper recall tomorrow.</p>
+        <h1>Keep the important parts of every workday top of mind.</h1>
+        <p>Hoger turns your meetings, messages, and emails into a short daily quiz—then brings key details back before you forget them.</p>
+        <div class="hero-cta">
+          <a class="button" href="#waitlist" data-track-cta="hero_waitlist">Join the waitlist</a>
+          <a class="button button-secondary" href="#how" data-track-cta="hero_how">See how it works</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section section--solid">
+      <div class="container">
+        <h2>See Hoger in action</h2>
+        <p class="section-intro">A quick walkthrough of the daily quiz and spaced recall flow.</p>
+        <div class="demo-frame" role="img" aria-label="Product demo video placeholder">
+          <div class="demo-placeholder">
+            <strong>Product demo coming soon</strong>
+            <span>Loom recording will appear here.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section section--net">
+      <div class="container">
+        <h2>Turn the workday into lasting recall</h2>
+        <p class="section-intro">A small daily habit that helps names, decisions, context, and commitments stick.</p>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">1</span>
+            <h3>Connect the places you work</h3>
+            <p>Hoger compiles the useful context from meeting notes, Slack or Teams messages, and email without asking you to rewrite your day.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">2</span>
+            <h3>Take a five-minute quiz</h3>
+            <p>At the end of the day, answer focused questions covering what happened, who was involved, when it matters, where it belongs, and why it was decided.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">3</span>
+            <h3>Strengthen what is slipping</h3>
+            <p>Get corrections with context, then see important details from previous days and weeks at the right time to lock them into memory.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="launch" class="section section--solid">
+      <div class="container">
+        <h2>Launching soon</h2>
+        <div class="launch-block">
+          <p class="launch-date" id="launch-date-local" aria-live="polite">Loading launch time…</p>
+          <div class="countdown" aria-label="Countdown to launch">
+            <div class="countdown-unit">
+              <span class="countdown-value" id="countdown-days">—</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="countdown-hours">—</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="countdown-minutes">—</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-value" id="countdown-seconds">—</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+          </div>
+          <div class="launch-actions">
+            <button type="button" class="button is-disabled" disabled aria-disabled="true">Register for launch event</button>
+            <p class="launch-note">Launch event registration opens soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section section--net">
+      <div class="container">
+        <h2>Simple pricing</h2>
+        <div class="pricing-block">
+          <p class="pricing-trial">Start with a 30-day free trial.</p>
+          <p class="pricing-amount">$20 <span>/ month</span></p>
+          <p class="pricing-detail">After your trial, Hoger is $20 billed monthly. Cancel anytime.</p>
+          <a class="button" href="#waitlist" data-track-cta="pricing_waitlist">Join the waitlist</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="waitlist" class="section section--solid">
+      <div class="container">
+        <h2>Make five minutes your daily advantage</h2>
+        <p class="section-intro">Join the Hoger waitlist for early access and product updates.</p>
+        <form class="waitlist-form" data-waitlist-form novalidate>
+          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label for="email-waitlist">Email address</label>
+          <input type="email" id="email-waitlist" name="email" required placeholder="you@example.com" autocomplete="email">
+          <button type="submit" class="button waitlist-submit" data-waitlist-submit aria-busy="false">
+            <span class="waitlist-submit-default">Join the waitlist</span>
+          </button>
+          <p class="waitlist-message" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="founder" class="section section--net">
+      <div class="container">
+        <h2>Meet the founder</h2>
+        <div class="founder-content">
+          <div class="founder-image">
+            <img src="https://res.cloudinary.com/dwizhptot/image/upload/v1647900844/elliot-chapple-profile_2x_px7ase_euhn34.webp" alt="Elliot Chapple, Creator of Hoger" class="founder-photo" width="200" height="200" loading="lazy">
+          </div>
+          <div class="founder-info">
+            <h3>Elliot Chapple</h3>
+            <p class="founder-title">Creator</p>
+            <p class="founder-quote"><span class="quote-mark quote-mark-start">❝</span>Work moves fast—and the important details fade just as quickly. I built Hoger so five minutes at the end of your day turns meetings, messages, and decisions into lasting recall, ready when you need them tomorrow.<span class="quote-mark quote-mark-end">❞</span></p>
+            <div class="founder-cta">
+              <a href="https://www.linkedin.com/in/elliot-chapple-60560382/" class="button linkedin-button" target="_blank" rel="noopener noreferrer" data-track-cta="founder_linkedin">Connect on LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section--solid">
+    <div class="container">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#hero">Home</a>
+        <a href="#how">How it works</a>
+        <a href="#demo">Demo</a>
+        <a href="#launch">Launch</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#waitlist">Waitlist</a>
+      </nav>
+      <p>© <span id="year"></span> Hoger. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/main.js"></script>
+</body>
+</html>

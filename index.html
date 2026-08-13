@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://us.i.posthog.com">
-  <link rel="preload" href="assets/styles.css" as="style">
+  <link rel="preload" href="assets/styles.css?v=5" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
@@ -77,7 +77,7 @@
     .hero p { color: var(--color-text-secondary); max-width: 36rem; margin: 0 auto 2rem; }
   </style>
 
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/styles.css?v=5">
 
   <script>
     window.__HOGER__ = {
@@ -134,16 +134,15 @@
         <h2>See Hoger in action</h2>
         <p class="section-intro">A quick walkthrough of the daily quiz and spaced recall flow.</p>
         <div class="demo-frame">
-          <video
+          <iframe
             class="demo-video"
-            controls
-            playsinline
-            preload="auto"
-            poster="assets/promo-poster.jpg"
-            aria-label="Hoger product demo"
-          >
-            <source src="assets/promo-video-v2.mp4" type="video/mp4">
-          </video>
+            src="https://www.youtube-nocookie.com/embed/Gqr7FZwHPoE?rel=0&modestbranding=1"
+            title="Hoger product demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
         </div>
       </div>
     </section>

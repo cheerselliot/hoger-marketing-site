@@ -373,9 +373,9 @@ h2 {
 .demo-frame {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 672px;
   margin: 0 auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   border-radius: 1rem;
   border: 1px solid var(--color-border-primary);
   background: #000;
@@ -394,7 +394,7 @@ h2 {
   background: #000;
   display: block;
   z-index: 2;
-  transform: translate(-50%, -50%) scale(1.18);
+  transform: translate(-50%, -50%) scale(1.12);
   pointer-events: auto;
 }
 

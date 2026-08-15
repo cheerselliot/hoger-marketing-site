@@ -355,11 +355,11 @@ async function initDeployStamp() {
   }
   if (!iso) return;
 
-  const when = DateTime.fromISO(iso, { zone: "utc" });
+  const when = DateTime.fromISO(iso, { zone: "utc" }).setZone("Australia/Sydney");
   if (!when.isValid) return;
 
   el.dateTime = when.toISO();
-  el.textContent = when.toFormat("d MMM yyyy, h:mm a 'UTC'");
+  el.textContent = when.toFormat("d MMM yyyy, h:mm a ZZZZ");
   if (commit) el.textContent += ` · ${commit}`;
 }
 

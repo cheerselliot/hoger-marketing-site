@@ -1,13 +1,14 @@
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function json(data, status = 200) {
-  return new Response(JSON.stringify(data), {
-    status,
+  return {
+    statusCode: status,
     headers: {
       'Content-Type': 'application/json',
       'Cache-Control': 'no-store',
     },
-  });
+    body: JSON.stringify(data),
+  };
 }
 
 function buildTags(utm) {
@@ -36,6 +37,26 @@ function shouldRetryWithoutTags(status, parsed, tags) {
   if (status === 401 || status === 429) return false;
   const haystack = `${parsed.code ?? ''} ${parsed.detail ?? ''}`.toLowerCase();
   return status === 400 || status === 403 || status === 422 || haystack.includes('tag');
+}
+
+function clientStatusForButtondown(status) {
+  if (status === 401 || status === 403) return 503;
+  if (status === 429) return 429;
+  if (status >= 500) return 502;
+  return 400;
+}
+
+function userErrorForButtondown(status, parsed) {
+  if (status === 401 || status === 403) return 'Subscribe not configured';
+  if (status === 429) return 'Too many signups. Try again later.';
+  if (parsed.detail) return parsed.detail;
+  return 'Could not subscribe';
+}
+
+function clientIp(event) {
+  const forwarded = event.headers['x-forwarded-for'] || event.headers['X-Forwarded-For'];
+  if (forwarded) return forwarded.split(',')[0].trim();
+  return event.headers['x-nf-client-connection-ip'] || event.headers['client-ip'] || undefined;
 }
 
 async function createButtondownSubscriber(apiKey, payload) {
@@ -78,6 +99,7 @@ exports.handler = async (event) => {
 
   const utm = body.utm;
   const tags = buildTags(utm);
+  const ip = clientIp(event);
   const metadata = {
     slug: 'hoger',
     hostname: event.headers.host || 'hoger.ai',
@@ -85,12 +107,15 @@ exports.handler = async (event) => {
     tags: tags.join(','),
   };
 
-  let bdRes = await createButtondownSubscriber(apiKey, {
+  const payload = {
     email_address: email,
     tags,
     type: 'regular',
+    ...(ip ? { ip_address: ip } : {}),
     metadata,
-  });
+  };
+
+  let bdRes = await createButtondownSubscriber(apiKey, payload);
 
   if (!bdRes.ok) {
     let errText = await bdRes.text();
@@ -101,9 +126,11 @@ exports.handler = async (event) => {
     }
 
     if (shouldRetryWithoutTags(bdRes.status, parsed, tags)) {
+      console.warn('Buttondown rejected tags; retrying metadata-only subscribe', bdRes.status, errText);
       bdRes = await createButtondownSubscriber(apiKey, {
         email_address: email,
         type: 'regular',
+        ...(ip ? { ip_address: ip } : {}),
         metadata,
       });
       if (bdRes.ok) {
@@ -117,10 +144,9 @@ exports.handler = async (event) => {
     }
 
     console.error('Buttondown error', bdRes.status, errText);
-    const status = bdRes.status === 429 ? 429 : bdRes.status >= 500 ? 502 : 400;
     return json(
-      { ok: false, error: parsed.detail || 'Could not subscribe' },
-      status,
+      { ok: false, error: userErrorForButtondown(bdRes.status, parsed) },
+      clientStatusForButtondown(bdRes.status),
     );
   }
 

@@ -331,3 +331,36 @@ initCountdown();
 
 const year = document.getElementById("year");
 if (year) year.textContent = String(new Date().getFullYear());
+
+async function initDeployStamp() {
+  const el = document.getElementById("deployed-at");
+  if (!el) return;
+
+  let iso;
+  let commit;
+  try {
+    const res = await fetch("/deploy.json", { cache: "no-store" });
+    if (res.ok) {
+      const data = await res.json();
+      iso = data.deployedAt;
+      commit = data.commit;
+    }
+  } catch {
+    /* local preview without a Netlify stamp */
+  }
+
+  if (!iso) {
+    const modified = new Date(document.lastModified);
+    if (!Number.isNaN(modified.getTime())) iso = modified.toISOString();
+  }
+  if (!iso) return;
+
+  const when = DateTime.fromISO(iso, { zone: "utc" });
+  if (!when.isValid) return;
+
+  el.dateTime = when.toISO();
+  el.textContent = when.toFormat("d MMM yyyy, h:mm a 'UTC'");
+  if (commit) el.textContent += ` · ${commit}`;
+}
+
+initDeployStamp();

@@ -1,7 +1,12 @@
 [build]
   publish = "."
-  command = ""
+  command = "node scripts/stamp-deploy.js"
   functions = "netlify/functions"
+
+[[headers]]
+  for = "/deploy.json"
+  [headers.values]
+    Cache-Control = "no-store"
 
 [[headers]]
   for = "/assets/*"
@@ -57,3 +62,15 @@
   from = "/api/subscribe"
   to = "/.netlify/functions/subscribe"
   status = 200
+
+[[redirects]]
+  from = "https://www.hoger.ai/*"
+  to = "https://hoger.ai/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://hoger.netlify.app/*"
+  to = "https://hoger.ai/:splat"
+  status = 301
+  force = true

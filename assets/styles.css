@@ -386,16 +386,14 @@ h2 {
 
 .demo-video {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
+  top: -30px;
+  left: -30px;
+  width: calc(100% + 60px);
+  height: calc(100% + 60px);
   border: 0;
   background: #000;
   display: block;
   z-index: 2;
-  transform: translate(-50%, -50%) scale(1.12);
-  pointer-events: auto;
 }
 
 /* Steps */
@@ -730,6 +728,13 @@ h2 {
 
 .footer-nav a:hover {
   color: var(--color-brand-700);
+}
+
+.deploy-stamp {
+  margin: 0.75rem 0 0;
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  opacity: 0.75;
 }
 
 /* Responsive */

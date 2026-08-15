@@ -386,13 +386,16 @@ h2 {
 
 .demo-video {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
   border: 0;
   background: #000;
   display: block;
   z-index: 2;
+  transform: translate(-50%, -50%) scale(1.18);
+  pointer-events: auto;
 }
 
 /* Steps */

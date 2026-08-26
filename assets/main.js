@@ -82,6 +82,23 @@ function loadPostHog() {
   });
 }
 
+function newConversionId(prefix) {
+  const id =
+    typeof crypto !== "undefined" && crypto.randomUUID
+      ? crypto.randomUUID()
+      : `${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+  return prefix ? `${prefix}_${id}` : id;
+}
+
+function trackReddit(eventName, extra) {
+  if (!cfg.redditPixelId || typeof window.rdt !== "function") return;
+
+  window.rdt("track", eventName, {
+    conversionId: newConversionId(eventName.toLowerCase()),
+    ...(extra || {}),
+  });
+}
+
 function loadRedditPixel() {
   const pixelId = cfg.redditPixelId;
   if (!pixelId) return;
@@ -101,23 +118,14 @@ function loadRedditPixel() {
   })(window, document);
 
   window.rdt("init", pixelId);
-  window.rdt("track", "PageVisit");
+  trackReddit("PageVisit");
 }
 
 function trackRedditSignUp(email) {
-  if (!cfg.redditPixelId || typeof window.rdt !== "function") return;
-
-  const conversionId =
-    typeof crypto !== "undefined" && crypto.randomUUID
-      ? crypto.randomUUID()
-      : `signup_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
-
   const normalizedEmail = (email || "").toLowerCase().trim();
-  const meta = { conversionId };
-  if (normalizedEmail) meta.email = normalizedEmail;
-
-  // Advanced matching: email is available at conversion time (not on first page load)
-  window.rdt("track", "SignUp", meta);
+  const extra = {};
+  if (normalizedEmail) extra.email = normalizedEmail;
+  trackReddit("SignUp", extra);
 }
 
 function upgradeWaitlistButton(btn) {

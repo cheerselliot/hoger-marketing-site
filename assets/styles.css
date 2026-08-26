@@ -332,31 +332,19 @@ h2 {
   -webkit-text-fill-color: unset;
 }
 
-.promo-badge {
-  display: inline-block;
-  background: rgba(6, 78, 59, 0.65);
-  color: var(--color-brand-700);
-  padding: 0.45rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-  border: 1px solid var(--badge-border);
-}
-
 .hero h1 {
   font-size: clamp(1.85rem, 4.5vw, 2.85rem);
   font-weight: 600;
-  margin-bottom: 1.25rem;
-  max-width: 34rem;
+  margin-bottom: 1rem;
+  max-width: 18ch;
   margin-left: auto;
   margin-right: auto;
 }
 
-.hero p {
+.hero-lede {
   font-size: 1.15rem;
   margin-bottom: 2rem;
-  max-width: 36rem;
+  max-width: 32rem;
   margin-left: auto;
   margin-right: auto;
   color: var(--color-text-secondary);

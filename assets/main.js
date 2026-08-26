@@ -1,5 +1,5 @@
 import { DateTime } from "https://cdn.jsdelivr.net/npm/luxon@3.5.0/+esm";
-import { initPlexusBackground } from "./plexus-bg.js?v=4";
+import { initPlexusBackground } from "./plexus-bg.js?v=6";
 
 const cfg = window.__HOGER__ || {};
 
@@ -84,7 +84,7 @@ function loadPostHog() {
 
 function loadRedditPixel() {
   const pixelId = cfg.redditPixelId;
-  if (!pixelId || window.rdt) return;
+  if (!pixelId) return;
 
   !(function (w, d) {
     if (!w.rdt) {
@@ -93,7 +93,7 @@ function loadRedditPixel() {
       });
       p.callQueue = [];
       var t = d.createElement("script");
-      t.src = "https://www.redditstatic.com/ads/pixel.js";
+      t.src = "https://www.redditstatic.com/ads/pixel.js?pixel_id=" + encodeURIComponent(pixelId);
       t.async = true;
       var s = d.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(t, s);
@@ -102,6 +102,22 @@ function loadRedditPixel() {
 
   window.rdt("init", pixelId);
   window.rdt("track", "PageVisit");
+}
+
+function trackRedditSignUp(email) {
+  if (!cfg.redditPixelId || typeof window.rdt !== "function") return;
+
+  const conversionId =
+    typeof crypto !== "undefined" && crypto.randomUUID
+      ? crypto.randomUUID()
+      : `signup_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+
+  const normalizedEmail = (email || "").toLowerCase().trim();
+  const meta = { conversionId };
+  if (normalizedEmail) meta.email = normalizedEmail;
+
+  // Advanced matching: email is available at conversion time (not on first page load)
+  window.rdt("track", "SignUp", meta);
 }
 
 function upgradeWaitlistButton(btn) {
@@ -225,9 +241,7 @@ function initWaitlistForms() {
               ...(getUtm() || {}),
             });
           }
-          if (window.rdt) {
-            window.rdt("track", "Lead");
-          }
+          trackRedditSignUp(email);
         } else {
           setWaitlistState(form, "idle");
           showMessage(msg, data.error || "Something went wrong.", "error");
@@ -277,7 +291,7 @@ function initCtaTracking() {
 }
 
 const LAUNCH = DateTime.fromObject(
-  { year: 2026, month: 9, day: 15, hour: 0, minute: 0, second: 0 },
+  { year: 2026, month: 9, day: 30, hour: 0, minute: 0, second: 0 },
   { zone: "Australia/Sydney" },
 );
 

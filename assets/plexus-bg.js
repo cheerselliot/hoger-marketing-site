@@ -6,12 +6,12 @@ export function initPlexusBackground(canvas) {
 
   const config = {
     nodeCount: window.innerWidth < 768 ? 42 : 68,
-    linkDistance: window.innerWidth < 768 ? 130 : 165,
+    linkDistance: window.innerWidth < 768 ? 165 : 210,
     nodeRadius: 1.2,
     lineOpacity: 0.28,
-    nodeOpacity: 0.75,
-    drift: 0.12,
-    pulse: 0.00045,
+    nodeOpacity: 0.7,
+    drift: 0.055,
+    pulse: 0.00024,
     fillOpacity: 0.055,
   };
 
@@ -49,8 +49,8 @@ export function initPlexusBackground(canvas) {
       return { x: node.x, y: node.y };
     }
     return {
-      x: node.x + Math.sin(t * config.pulse + node.phase) * 14 + Math.cos(node.ox + t * 0.00008) * 6,
-      y: node.y + Math.cos(t * config.pulse * 1.1 + node.phase) * 12 + Math.sin(node.oy + t * 0.00007) * 6,
+      x: node.x + Math.sin(t * config.pulse + node.phase) * 14 + Math.cos(node.ox + t * 0.00004) * 6,
+      y: node.y + Math.cos(t * config.pulse * 1.1 + node.phase) * 12 + Math.sin(node.oy + t * 0.000032) * 6,
     };
   }
 
@@ -104,8 +104,8 @@ export function initPlexusBackground(canvas) {
 
     for (let i = 0; i < nodes.length; i++) {
       const p = positions[i];
-      const glow = config.nodeOpacity + Math.sin(t * 0.002 + nodes[i].phase) * 0.06;
-      ctx.fillStyle = `rgba(52, 211, 153, ${glow})`;
+      const glow = config.nodeOpacity + Math.sin(t * 0.0008 + nodes[i].phase) * 0.05;
+      ctx.fillStyle = `rgba(5, 150, 105, ${glow})`;
       ctx.beginPath();
       ctx.arc(p.x, p.y, nodes[i].r + 0.8, 0, Math.PI * 2);
       ctx.fill();
@@ -137,7 +137,7 @@ export function initPlexusBackground(canvas) {
 
   const onResize = () => {
     config.nodeCount = window.innerWidth < 768 ? 42 : 68;
-    config.linkDistance = window.innerWidth < 768 ? 130 : 165;
+    config.linkDistance = window.innerWidth < 768 ? 165 : 210;
     resize();
   };
 

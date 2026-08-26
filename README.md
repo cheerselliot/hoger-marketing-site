@@ -22,12 +22,31 @@ npx netlify dev
 2. Build settings: publish directory `.`, no build command (see `netlify.toml`).
 3. Set environment variable:
    - `BUTTONDOWN_API_KEY` — same value as landing-platform (see `Scripts/landing-platform/.dev.vars` or Worker secret).
-4. Optional: set `REDDIT_PIXEL_ID` in `index.html` `window.__HOGER__.redditPixelId` when running Reddit ads.
+4. Set `redditPixelId` in `index.html` `window.__HOGER__` to your Reddit Ads pixel ID (Events Manager). Waitlist signups fire a `SignUp` conversion event.
+
+## Custom domain (`hoger.ai`)
+
+Canonical, OG, sitemap, and robots already use `https://hoger.ai/`.
+
+1. In Netlify: **Domain management → Add a domain** → `hoger.ai` (and `www.hoger.ai`).
+2. Set **Primary domain** to `hoger.ai` (HTTPS automatic).
+3. At the registrar, either:
+
+**Netlify DNS (simplest):** copy Netlify’s nameservers into the registrar.
+
+**External DNS:** keep the registrar’s nameservers and add:
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | `@` | `75.2.60.5` |
+| CNAME | `www` | `hoger.netlify.app` |
+
+`netlify.toml` 301s `www.hoger.ai` and `hoger.netlify.app` to `https://hoger.ai/`.
 
 ## Stack
 
 - Static HTML/CSS/JS
-- [Luxon](https://moment.github.io/luxon/) (CDN) — launch countdown in viewer local timezone (source: Sept 15 2026 00:00 Australia/Sydney)
+- [Luxon](https://moment.github.io/luxon/) (CDN) — launch countdown in viewer local timezone (source: Sept 30 2026 00:00 Australia/Sydney)
 - PostHog — same project as landing-platform
 - Buttondown — via `netlify/functions/subscribe.js`
 

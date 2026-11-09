@@ -1,0 +1,1295 @@
+/* Editorial theme — full-bleed hero, serif headlines, proof, stats, loop, FAQ.
+   Existing warm-serif and dark-glass sites do not load this file. */
+
+:root {
+  --color-brand-50: #eef1fa;
+  --color-brand-100: #e4e8f6;
+  --color-brand-200: #c9d1ee;
+  --color-brand-300: #a8b4e2;
+  --color-brand-400: #7d8fd0;
+  --color-brand-500: #3e4f9a;
+  --color-brand-600: #334484;
+  --color-brand-700: #2a386e;
+  --color-brand-800: #1e2850;
+
+  --color-background-primary: #f7f6f3;
+  --color-background-secondary: #efeeea;
+  --color-text-primary: #1c1b19;
+  --color-text-secondary: #4e4c47;
+  --color-text-tertiary: #6f6c66;
+  --color-border-primary: #ddd9d2;
+
+  --header-bg: rgba(247, 246, 243, 0.92);
+  --header-border: rgba(28, 27, 25, 0.08);
+  --header-shadow: none;
+  --nav-hover-bg: transparent;
+  --mobile-nav-bg: #f7f6f3;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --button-text: #ffffff;
+  --button-border: transparent;
+  --button-shadow: transparent;
+  --badge-border: transparent;
+
+  --brand-primary: var(--color-brand-500);
+  --editorial-ink: #14161c;
+  --editorial-hero-muted: rgba(255, 255, 255, 0.74);
+}
+
+body[data-theme="editorial"] {
+  font-family: Outfit, "Avenir Next", "Segoe UI", sans-serif;
+  background: var(--color-background-primary);
+  color: var(--color-text-primary);
+}
+
+body[data-theme="editorial"]::before,
+body[data-theme="editorial"]::after {
+  display: none;
+}
+
+html:has(body[data-theme="editorial"]) {
+  scroll-padding-top: 5.5rem;
+}
+
+body[data-theme="editorial"] h1,
+body[data-theme="editorial"] h2,
+body[data-theme="editorial"] h3,
+body[data-theme="editorial"] .stat-value,
+body[data-theme="editorial"] .logo-word,
+body[data-theme="editorial"] .proof-list li {
+  font-family: Newsreader, "Iowan Old Style", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+body[data-theme="editorial"] h1,
+body[data-theme="editorial"] h2,
+body[data-theme="editorial"] h3 {
+  color: var(--color-text-primary);
+  line-height: 1.08;
+}
+
+body[data-theme="editorial"] h2 {
+  font-size: clamp(2.35rem, 4.4vw, 3.55rem);
+  text-align: left;
+  margin-bottom: 1.1rem;
+  max-width: 18em;
+}
+
+body[data-theme="editorial"] h3 {
+  font-size: clamp(1.55rem, 2vw, 1.9rem);
+  margin-bottom: 0.75rem;
+}
+
+body[data-theme="editorial"] p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+body[data-theme="editorial"] .container {
+  text-align: left;
+  max-width: 1120px;
+}
+
+body[data-theme="editorial"] .section {
+  padding: 5.5rem 0;
+}
+
+body[data-theme="editorial"] .section:nth-of-type(even) {
+  border: 0;
+}
+
+body[data-theme="editorial"] .section-intro {
+  text-align: left;
+  margin: 0 0 2.5rem;
+  max-width: 40rem;
+}
+
+body[data-theme="editorial"] .eyebrow {
+  font-family: Outfit, "Avenir Next", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin: 0 0 0.9rem;
+}
+
+body[data-theme="editorial"] .button {
+  background: var(--color-brand-500);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.78rem 1.2rem;
+  font-family: Outfit, "Avenir Next", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  box-shadow: none;
+}
+
+body[data-theme="editorial"] .button:hover {
+  transform: none;
+  background: var(--color-brand-600);
+  box-shadow: none;
+}
+
+body[data-theme="editorial"] .site-header--editorial {
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  box-shadow: none;
+  padding: 1.15rem 1.75rem;
+  color: #fff;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body[data-theme="editorial"] .site-header--editorial .logo {
+  gap: 0.6rem;
+  color: inherit;
+}
+
+body[data-theme="editorial"] .logo img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+body[data-theme="editorial"] .logo-word {
+  font-size: 1.55rem;
+  line-height: 1;
+  color: inherit;
+}
+
+body[data-theme="editorial"] .site-header--editorial .nav a {
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 500;
+  background: transparent;
+  padding: 0.4rem 0.7rem;
+}
+
+body[data-theme="editorial"] .site-header--editorial .nav a:hover {
+  color: #fff;
+  background: transparent;
+}
+
+body[data-theme="editorial"] .site-header--editorial .nav a.button,
+body[data-theme="editorial"] .site-header--editorial .nav a.nav-cta {
+  color: #fff;
+  background: var(--color-brand-500);
+  padding: 0.62rem 1rem;
+}
+
+body[data-theme="editorial"] .site-header--editorial .nav a.button:hover,
+body[data-theme="editorial"] .site-header--editorial .nav a.nav-cta:hover {
+  background: var(--color-brand-600);
+  color: #fff;
+}
+
+body[data-theme="editorial"] .site-header--editorial .menu-toggle {
+  color: #fff;
+}
+
+body[data-theme="editorial"] .site-header--editorial.is-stuck {
+  background: rgba(247, 246, 243, 0.94);
+  border-bottom-color: rgba(28, 27, 25, 0.08);
+  color: var(--color-text-primary);
+  backdrop-filter: blur(16px);
+}
+
+body[data-theme="editorial"] .site-header--editorial.is-stuck .nav a {
+  color: var(--color-text-secondary);
+}
+
+body[data-theme="editorial"] .site-header--editorial.is-stuck .nav a:hover {
+  color: var(--color-text-primary);
+}
+
+body[data-theme="editorial"] .site-header--editorial.is-stuck .nav a.button,
+body[data-theme="editorial"] .site-header--editorial.is-stuck .nav a.nav-cta {
+  color: #fff;
+}
+
+body[data-theme="editorial"] .site-header--editorial.is-stuck .menu-toggle {
+  color: var(--color-text-primary);
+}
+
+body[data-theme="editorial"] .hero--editorial {
+  min-height: 100vh;
+  display: block;
+  text-align: left;
+  padding: 0;
+  background:
+    radial-gradient(820px 520px at 82% 42%, rgba(62, 79, 154, 0.45), transparent 62%),
+    radial-gradient(640px 420px at 8% 100%, rgba(255, 255, 255, 0.05), transparent 55%),
+    var(--editorial-ink);
+  color: #fff;
+}
+
+body[data-theme="editorial"] .hero--editorial::before {
+  display: none;
+}
+
+body[data-theme="editorial"] .hero-editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: 3.5rem;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 8.25rem 2rem 5.5rem;
+  min-height: 100vh;
+}
+
+body[data-theme="editorial"] .hero--editorial .hero-content {
+  max-width: 38rem;
+  padding: 0;
+  text-align: left;
+}
+
+body[data-theme="editorial"] .hero--editorial h1 {
+  color: #fff;
+  font-size: clamp(2.65rem, 4.2vw, 3.55rem);
+  line-height: 1.02;
+  margin: 0 0 1.25rem;
+  max-width: 13em;
+}
+
+body[data-theme="editorial"] .hero--editorial .hero-content p {
+  color: var(--editorial-hero-muted);
+  font-size: 1.12rem;
+  line-height: 1.55;
+  max-width: 34rem;
+  margin: 0 0 1.75rem;
+}
+
+body[data-theme="editorial"] .eyebrow-light {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+body[data-theme="editorial"] .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+body[data-theme="editorial"] .text-link {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+body[data-theme="editorial"] .text-link:hover {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+body[data-theme="editorial"] .stage {
+  display: grid;
+  gap: 0.65rem;
+}
+
+body[data-theme="editorial"] .stage-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 1.15rem 1.25rem 1.25rem;
+}
+
+body[data-theme="editorial"] .stage-card--out {
+  background: rgba(62, 79, 154, 0.38);
+  border-color: rgba(176, 190, 235, 0.35);
+}
+
+body[data-theme="editorial"] .stage-kicker,
+body[data-theme="editorial"] .aside-label,
+body[data-theme="editorial"] .trust-kicker,
+body[data-theme="editorial"] .built-for,
+body[data-theme="editorial"] .proof-label {
+  font-family: Outfit, "Avenir Next", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 0.7rem;
+}
+
+body[data-theme="editorial"] .stage-kicker {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body[data-theme="editorial"] .stage-card pre,
+body[data-theme="editorial"] .loop-aside pre {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+body[data-theme="editorial"] .stage-card pre {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body[data-theme="editorial"] .stage-arrow {
+  margin: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.15rem;
+  letter-spacing: 0;
+}
+
+body[data-theme="editorial"] .stage-caption {
+  margin: 0.35rem 0 0;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+body[data-theme="editorial"] .stage--flow {
+  display: block;
+}
+
+body[data-theme="editorial"] .flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) 52px minmax(0, 0.92fr);
+  gap: 0.35rem;
+  align-items: center;
+}
+
+body[data-theme="editorial"] .flow-swap .stage-kicker,
+body[data-theme="editorial"] .flow-erp .stage-kicker {
+  margin-bottom: 0.55rem;
+}
+
+body[data-theme="editorial"] .swap {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+body[data-theme="editorial"] .swap-type {
+  margin: 0;
+  padding: 0.85rem 1rem 0;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: Outfit, "Avenir Next", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+body[data-theme="editorial"] .swap-type.is-out {
+  opacity: 0;
+  transform: translateY(-0.35rem);
+}
+
+body[data-theme="editorial"] .swap-stack {
+  position: relative;
+  height: 5.6rem;
+}
+
+body[data-theme="editorial"] .swap--typed .swap-stack {
+  height: 2.7rem;
+}
+
+body[data-theme="editorial"] .swap-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.85rem 1rem;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(72%);
+  transition: opacity 0.48s ease, transform 0.48s ease;
+}
+
+body[data-theme="editorial"] .swap--typed .swap-card {
+  padding-top: 0.2rem;
+  padding-bottom: 0.85rem;
+  justify-content: flex-start;
+}
+
+body[data-theme="editorial"] .swap-card.is-on {
+  opacity: 1;
+  transform: none;
+}
+
+body[data-theme="editorial"] .swap-card.is-out {
+  opacity: 0;
+  transform: translateY(-72%);
+}
+
+body[data-theme="editorial"] .swap-card.is-reset {
+  transition: none;
+}
+
+body[data-theme="editorial"] .swap-name {
+  margin: 0;
+  color: #fff;
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.45rem;
+  line-height: 1.05;
+}
+
+body[data-theme="editorial"] .swap-detail {
+  margin: 0.3rem 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.92rem;
+}
+
+body[data-theme="editorial"] .flow-bridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body[data-theme="editorial"] .erp-card {
+  background: rgba(62, 79, 154, 0.46);
+  border: 1px solid rgba(186, 198, 240, 0.4);
+  border-radius: 18px;
+  padding: 0.9rem 0.95rem 0.7rem;
+}
+
+body[data-theme="editorial"] .erp-name {
+  margin: 0 0 0.15rem;
+  color: #fff;
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+body[data-theme="editorial"] .erp-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body[data-theme="editorial"] .erp-mod {
+  fill: rgba(255, 255, 255, 0.08);
+  stroke: rgba(255, 255, 255, 0.38);
+}
+
+body[data-theme="editorial"] .erp-mod-label {
+  fill: #fff;
+  font-family: Outfit, "Avenir Next", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+body[data-theme="editorial"] .wire {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.82);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 4 6;
+  animation: wire-flow 1.15s linear infinite;
+}
+
+@keyframes wire-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-theme="editorial"] .wire {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
+
+/* —— Lens stage: loupe moves onto each agent and zooms —— */
+body[data-theme="editorial"] .stage--lens {
+  display: grid;
+  gap: 0.85rem;
+  align-content: center;
+}
+
+body[data-theme="editorial"] .lens-scene {
+  position: relative;
+  width: 100%;
+  max-width: 22rem;
+  min-height: 21rem;
+  padding: 1.25rem 1.15rem 1.35rem;
+  border-radius: 22px;
+  background:
+    radial-gradient(90% 70% at 70% 35%, rgba(255, 255, 255, 0.08), transparent 55%),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+body[data-theme="editorial"] .lens-board {
+  display: grid;
+  gap: 0.7rem;
+  position: relative;
+  z-index: 1;
+  width: min(100%, 13.5rem);
+}
+
+body[data-theme="editorial"] .lens-card {
+  position: relative;
+  margin: 0;
+  padding: 0.85rem 2.4rem 0.85rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.55);
+  transform-origin: center left;
+}
+
+body[data-theme="editorial"] .lens-card--0 {
+  animation: lens-card-0 9s ease-in-out infinite;
+}
+body[data-theme="editorial"] .lens-card--1 {
+  animation: lens-card-1 9s ease-in-out infinite;
+}
+body[data-theme="editorial"] .lens-card--2 {
+  animation: lens-card-2 9s ease-in-out infinite;
+}
+
+body[data-theme="editorial"] .lens-spinner {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-top-color: #7ef0c4;
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+body[data-theme="editorial"] .lens-spinner--0 {
+  animation:
+    lens-spin 0.65s linear infinite,
+    lens-spinner-show-0 9s ease-in-out infinite;
+}
+body[data-theme="editorial"] .lens-spinner--1 {
+  animation:
+    lens-spin 0.65s linear infinite,
+    lens-spinner-show-1 9s ease-in-out infinite;
+}
+body[data-theme="editorial"] .lens-spinner--2 {
+  animation:
+    lens-spin 0.65s linear infinite,
+    lens-spinner-show-2 9s ease-in-out infinite;
+}
+
+@keyframes lens-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Spinner visible only while that card is under the loupe */
+@keyframes lens-spinner-show-0 {
+  0%, 3% { opacity: 0; }
+  8%, 26% { opacity: 1; }
+  30%, 100% { opacity: 0; }
+}
+@keyframes lens-spinner-show-1 {
+  0%, 32% { opacity: 0; }
+  38%, 59% { opacity: 1; }
+  63%, 100% { opacity: 0; }
+}
+@keyframes lens-spinner-show-2 {
+  0%, 65% { opacity: 0; }
+  71%, 92% { opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+
+body[data-theme="editorial"] .lens-card-status {
+  margin: 0 0 0.2rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+body[data-theme="editorial"] .lens-card-name {
+  margin: 0;
+  font-family: Newsreader, "Iowan Old Style", Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.15;
+}
+
+body[data-theme="editorial"] .lens-card-detail {
+  margin: 0.3rem 0 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Loupe: ring + handle on the rim (radial), 20° CCW from SE */
+body[data-theme="editorial"] .lens-loupe {
+  position: absolute;
+  z-index: 3;
+  left: 1.15rem;
+  top: 0.7rem;
+  pointer-events: none;
+  animation: lens-loupe-travel 9s ease-in-out infinite;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.4));
+}
+
+body[data-theme="editorial"] .lens-loupe-body {
+  position: relative;
+  width: 6.6rem;
+  height: 6.6rem;
+}
+
+body[data-theme="editorial"] .lens-loupe-ring {
+  width: 6.6rem;
+  height: 6.6rem;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.95);
+  box-sizing: border-box;
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.2), transparent 45%),
+    rgba(12, 18, 30, 0.18);
+  backdrop-filter: brightness(1.15) contrast(1.05);
+}
+
+body[data-theme="editorial"] .lens-loupe-handle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.85rem;
+  height: 2.85rem;
+  margin-left: -0.425rem;
+  border-radius: 999px;
+  background: linear-gradient(160deg, #f5f7fb, #b7c1cf);
+  /* From center: rotate to angle on rim, then push out so tip sits on circumference.
+     0° = south; 45° = SE; 25° = 20° CCW from SE. */
+  transform: rotate(25deg) translateY(2.95rem);
+  transform-origin: 50% 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* Card highlight windows: 0–28%, 33–61%, 66–94% */
+@keyframes lens-card-0 {
+  0%, 3% { opacity: 0.55; transform: scale(1); border-color: rgba(255,255,255,0.12); color: rgba(255,255,255,0.55); }
+  8%, 26% { opacity: 1; transform: scale(1.08); border-color: rgba(255,255,255,0.45); box-shadow: 0 12px 28px rgba(0,0,0,0.25); }
+  30%, 100% { opacity: 0.55; transform: scale(1); border-color: rgba(255,255,255,0.12); box-shadow: none; }
+}
+@keyframes lens-card-1 {
+  0%, 32% { opacity: 0.55; transform: scale(1); border-color: rgba(255,255,255,0.12); box-shadow: none; }
+  38%, 59% { opacity: 1; transform: scale(1.08); border-color: rgba(255,255,255,0.45); box-shadow: 0 12px 28px rgba(0,0,0,0.25); }
+  63%, 100% { opacity: 0.55; transform: scale(1); border-color: rgba(255,255,255,0.12); box-shadow: none; }
+}
+@keyframes lens-card-2 {
+  0%, 65% { opacity: 0.55; transform: scale(1); border-color: rgba(255,255,255,0.12); box-shadow: none; }
+  71%, 92% { opacity: 1; transform: scale(1.08); border-color: rgba(255,255,255,0.45); box-shadow: 0 12px 28px rgba(0,0,0,0.25); }
+  96%, 100% { opacity: 0.55; transform: scale(1); border-color: rgba(255,255,255,0.12); box-shadow: none; }
+}
+
+/* Loupe sits over card 0, then 1, then 2 — with zoom pulse on each */
+@keyframes lens-loupe-travel {
+  0%, 3% { transform: translate(0.6rem, 0.35rem) scale(0.86); }
+  8%, 26% { transform: translate(0.6rem, 0.35rem) scale(1.12); }
+  30%, 33% { transform: translate(0.6rem, 0.35rem) scale(0.86); }
+
+  38%, 40% { transform: translate(0.6rem, 5.35rem) scale(0.86); }
+  45%, 59% { transform: translate(0.6rem, 5.35rem) scale(1.12); }
+  63%, 66% { transform: translate(0.6rem, 5.35rem) scale(0.86); }
+
+  71%, 73% { transform: translate(0.6rem, 10.35rem) scale(0.86); }
+  78%, 92% { transform: translate(0.6rem, 10.35rem) scale(1.12); }
+  96%, 100% { transform: translate(0.6rem, 10.35rem) scale(0.86); }
+}
+
+@media (max-width: 900px) {
+  body[data-theme="editorial"] .lens-scene {
+    min-height: 19rem;
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-theme="editorial"] .lens-loupe,
+  body[data-theme="editorial"] .lens-card,
+  body[data-theme="editorial"] .lens-spinner {
+    animation: none !important;
+  }
+  body[data-theme="editorial"] .lens-loupe {
+    transform: translate(0.6rem, 0.35rem) scale(1.05);
+  }
+  body[data-theme="editorial"] .lens-card--0 {
+    opacity: 1;
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  body[data-theme="editorial"] .lens-spinner--0 {
+    opacity: 1;
+  }
+}
+
+body[data-theme="editorial"] .proof {
+  background: #fff;
+  padding: 2.4rem 0 2.15rem;
+  border-bottom: 1px solid rgba(28, 27, 25, 0.08);
+}
+
+body[data-theme="editorial"] .proof .container {
+  text-align: center;
+}
+
+body[data-theme="editorial"] .proof-label {
+  color: var(--color-text-tertiary);
+  text-align: center;
+  margin-bottom: 1.15rem;
+}
+
+body[data-theme="editorial"] .proof-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem 2.1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body[data-theme="editorial"] .proof-list li {
+  font-size: 1.45rem;
+  color: #2c2a27;
+  letter-spacing: -0.03em;
+}
+
+body[data-theme="editorial"] .problem,
+body[data-theme="editorial"] .audiences,
+body[data-theme="editorial"] .faq {
+  background: #efeeea;
+}
+
+body[data-theme="editorial"] .how,
+body[data-theme="editorial"] .trust {
+  background: #f7f6f3;
+}
+
+body[data-theme="editorial"] .problem-copy {
+  max-width: 40rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+body[data-theme="editorial"] .problem-close {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+body[data-theme="editorial"] .stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 2.25rem 0 0;
+  margin: 2.75rem 0 0;
+  border-top: 1px solid rgba(28, 27, 25, 0.12);
+}
+
+body[data-theme="editorial"] .stat-value {
+  font-size: clamp(3.6rem, 6vw, 5.4rem);
+  line-height: 0.9;
+  margin: 0 0 0.85rem;
+  color: var(--color-text-primary);
+}
+
+body[data-theme="editorial"] .stat-body {
+  margin: 0;
+  max-width: 28ch;
+}
+
+body[data-theme="editorial"] .stat-source {
+  margin: 0.7rem 0 0;
+  font-size: 0.92rem;
+  color: var(--color-text-tertiary);
+  max-width: 28ch;
+}
+
+body[data-theme="editorial"] .loop {
+  display: grid;
+}
+
+body[data-theme="editorial"] .loop-step {
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+  gap: 2.75rem;
+  align-items: center;
+  padding: 2.6rem 0;
+  border-top: 1px solid rgba(28, 27, 25, 0.12);
+}
+
+body[data-theme="editorial"] .loop-step:nth-child(even) {
+  grid-template-columns: minmax(0, 1.38fr) minmax(0, 0.62fr);
+}
+
+body[data-theme="editorial"] .loop-step:last-child {
+  border-bottom: 1px solid rgba(28, 27, 25, 0.12);
+}
+
+body[data-theme="editorial"] .loop-step:nth-child(even) .loop-aside,
+body[data-theme="editorial"] .loop-step:nth-child(even) .loop-media {
+  order: -1;
+}
+
+body[data-theme="editorial"] .step-kicker {
+  font-family: Outfit, "Avenir Next", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text-tertiary);
+  margin: 0 0 0.7rem;
+}
+
+body[data-theme="editorial"] .step-kicker span {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+body[data-theme="editorial"] .loop-copy p {
+  max-width: 38rem;
+}
+
+body[data-theme="editorial"] .built-for {
+  color: var(--color-text-tertiary);
+  margin: 1.15rem 0 0.55rem;
+}
+
+body[data-theme="editorial"] .chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body[data-theme="editorial"] .chip-list li {
+  border: 1px solid rgba(28, 27, 25, 0.14);
+  border-radius: 999px;
+  padding: 0.32rem 0.7rem;
+  font-size: 0.86rem;
+  color: var(--color-text-secondary);
+  background: #fff;
+}
+
+body[data-theme="editorial"] .loop-aside {
+  background: #fff;
+  border: 1px solid rgba(28, 27, 25, 0.08);
+  border-radius: 18px;
+  padding: 1.2rem 1.25rem 1.3rem;
+  box-shadow: 0 18px 40px rgba(28, 27, 25, 0.05);
+}
+
+body[data-theme="editorial"] .aside-label {
+  color: var(--color-text-tertiary);
+}
+
+body[data-theme="editorial"] .loop-aside pre {
+  color: var(--color-text-primary);
+}
+
+body[data-theme="editorial"] .loop-media {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(28, 27, 25, 0.08);
+  box-shadow: 0 18px 40px rgba(28, 27, 25, 0.05);
+}
+
+body[data-theme="editorial"] .loop-media:has(video) {
+  aspect-ratio: 16 / 9;
+  background: #14161c;
+}
+
+body[data-theme="editorial"] .loop-media img,
+body[data-theme="editorial"] .loop-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #14161c;
+}
+
+body[data-theme="editorial"] .loop-media video {
+  height: 100%;
+  object-fit: contain;
+}
+
+body[data-theme="editorial"] .loop-media--placeholder {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 0.35rem;
+  min-height: 14.5rem;
+  padding: 1.4rem 1.35rem;
+  background:
+    linear-gradient(135deg, rgba(28, 27, 25, 0.03) 25%, transparent 25%) -12px 0 / 24px 24px,
+    linear-gradient(225deg, rgba(28, 27, 25, 0.03) 25%, transparent 25%) -12px 0 / 24px 24px,
+    linear-gradient(45deg, rgba(28, 27, 25, 0.03) 25%, transparent 25%) 0 -12px / 24px 24px,
+    linear-gradient(315deg, rgba(28, 27, 25, 0.03) 25%, transparent 25%) 0 -12px / 24px 24px,
+    #f3f1ec;
+  border-style: dashed;
+  border-color: rgba(28, 27, 25, 0.18);
+}
+
+body[data-theme="editorial"] .loop-media-kicker {
+  font-family: Outfit, "Avenir Next", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+}
+
+body[data-theme="editorial"] .loop-media-title {
+  font-family: Newsreader, "Iowan Old Style", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+body[data-theme="editorial"] .loop-media-hint {
+  font-size: 0.86rem;
+  color: var(--color-text-tertiary);
+}
+
+body[data-theme="editorial"] .audience-grid,
+body[data-theme="editorial"] .trust-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+body[data-theme="editorial"] .audience-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body[data-theme="editorial"] .trust-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body[data-theme="editorial"] .audience-card,
+body[data-theme="editorial"] .trust-card {
+  background: #fff;
+  border: 1px solid rgba(28, 27, 25, 0.08);
+  border-radius: 18px;
+  padding: 1.35rem 1.3rem 1.45rem;
+  height: 100%;
+}
+
+body[data-theme="editorial"] .audience-index {
+  font-family: Outfit, "Avenir Next", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+  margin: 0 0 0.85rem;
+}
+
+body[data-theme="editorial"] .audience-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+}
+
+body[data-theme="editorial"] .audience-card li {
+  margin: 0.35rem 0;
+  color: var(--color-text-secondary);
+}
+
+body[data-theme="editorial"] .trust-kicker {
+  color: var(--color-brand-700);
+  margin-bottom: 0.85rem;
+}
+
+body[data-theme="editorial"] .trust .section-intro {
+  margin-bottom: 2rem;
+}
+
+body[data-theme="editorial"] .faq-container {
+  max-width: 760px;
+}
+
+body[data-theme="editorial"] .faq-list {
+  border-top: 1px solid rgba(28, 27, 25, 0.12);
+}
+
+body[data-theme="editorial"] .faq-item {
+  border-bottom: 1px solid rgba(28, 27, 25, 0.12);
+  padding: 0.2rem 0;
+}
+
+body[data-theme="editorial"] .faq-item summary {
+  cursor: pointer;
+  font-weight: 550;
+  font-size: 1.08rem;
+  padding: 1rem 1.75rem 1rem 0;
+  list-style: none;
+  position: relative;
+  color: var(--color-text-primary);
+}
+
+body[data-theme="editorial"] .faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+body[data-theme="editorial"] .faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0.85rem;
+  font-weight: 400;
+  font-size: 1.35rem;
+  color: var(--color-text-tertiary);
+}
+
+body[data-theme="editorial"] .faq-item[open] summary::after {
+  content: "–";
+}
+
+body[data-theme="editorial"] .faq-item p {
+  margin: 0 0 1.1rem;
+  max-width: 42rem;
+}
+
+body[data-theme="editorial"] section.closing {
+  background: var(--editorial-ink);
+  text-align: center;
+}
+
+body[data-theme="editorial"] .closing .container {
+  text-align: center;
+  max-width: 40rem;
+}
+
+body[data-theme="editorial"] .closing h2 {
+  color: #fff;
+  text-align: center;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+}
+
+body[data-theme="editorial"] .closing p,
+body[data-theme="editorial"] .closing label {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+body[data-theme="editorial"] .closing .waitlist-form {
+  text-align: left;
+}
+
+body[data-theme="editorial"] .closing input[type="email"] {
+  background: #fff;
+  color: var(--color-text-primary);
+  border-color: transparent;
+  border-radius: 999px;
+  padding: 0.9rem 1.1rem;
+}
+
+body[data-theme="editorial"] .launch-section .container {
+  max-width: 44rem;
+}
+
+body[data-theme="editorial"] .launch-date {
+  margin: -0.35rem 0 1rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+body[data-theme="editorial"] .countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 1.75rem auto 1.5rem;
+  max-width: 28rem;
+}
+
+body[data-theme="editorial"] .countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.85rem 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+body[data-theme="editorial"] .countdown-value {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: clamp(1.55rem, 4vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+body[data-theme="editorial"] .countdown-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body[data-theme="editorial"] .launch-details {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0 auto 1.75rem;
+  max-width: 26rem;
+  text-align: left;
+}
+
+body[data-theme="editorial"] .launch-detail {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="editorial"] .launch-detail dt {
+  margin: 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+body[data-theme="editorial"] .launch-detail dd {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.98rem;
+}
+
+body[data-theme="editorial"] .launch-register {
+  margin-top: 0.5rem;
+}
+
+body[data-theme="editorial"] .launch-register-title {
+  margin: 0 0 0.85rem;
+  color: #fff;
+  font-family: Newsreader, Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+body[data-theme="editorial"] .countdown.is-launched .countdown-value {
+  color: var(--brand-primary);
+}
+
+body[data-theme="editorial"] .site-footer {
+  background: #f7f6f3;
+  border-top: 1px solid rgba(28, 27, 25, 0.08);
+}
+
+body[data-theme="editorial"] .site-footer p {
+  text-align: center;
+  color: var(--color-text-tertiary);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 1024px) {
+  body[data-theme="editorial"] .site-header--editorial {
+    top: 0;
+    width: 100%;
+    padding: 0.85rem 1rem;
+  }
+
+  body[data-theme="editorial"] .nav {
+    background: var(--mobile-nav-bg);
+  }
+
+  body[data-theme="editorial"] .site-header--editorial .nav a,
+  body[data-theme="editorial"] .site-header--editorial.is-stuck .nav a {
+    color: var(--color-text-primary);
+  }
+
+  body[data-theme="editorial"] .site-header--editorial .nav a.button,
+  body[data-theme="editorial"] .site-header--editorial .nav a.nav-cta,
+  body[data-theme="editorial"] .site-header--editorial.is-stuck .nav a.button,
+  body[data-theme="editorial"] .site-header--editorial.is-stuck .nav a.nav-cta {
+    color: #fff;
+  }
+}
+
+@media (max-width: 900px) {
+  body[data-theme="editorial"] .hero-editorial,
+  body[data-theme="editorial"] .loop-step,
+  body[data-theme="editorial"] .loop-step:nth-child(even),
+  body[data-theme="editorial"] .stat-row,
+  body[data-theme="editorial"] .audience-grid,
+  body[data-theme="editorial"] .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-theme="editorial"] .hero-editorial {
+    padding: 6.5rem 1.25rem 3.5rem;
+    gap: 2.25rem;
+    min-height: auto;
+  }
+
+  body[data-theme="editorial"] .hero--editorial {
+    min-height: auto;
+  }
+
+  body[data-theme="editorial"] .hero--editorial h1 {
+    font-size: clamp(2.35rem, 9vw, 3rem);
+    max-width: none;
+  }
+
+  body[data-theme="editorial"] .flow {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.2rem;
+  }
+
+  body[data-theme="editorial"] .flow-swap,
+  body[data-theme="editorial"] .flow-erp {
+    width: min(100%, 22rem);
+  }
+
+  body[data-theme="editorial"] .flow-bridge {
+    transform: rotate(90deg);
+    height: 2.5rem;
+  }
+
+  body[data-theme="editorial"] .loop-step:nth-child(even) .loop-aside,
+  body[data-theme="editorial"] .loop-step:nth-child(even) .loop-media {
+    order: 0;
+  }
+
+  body[data-theme="editorial"] .stat-body,
+  body[data-theme="editorial"] .stat-source {
+    max-width: none;
+  }
+}

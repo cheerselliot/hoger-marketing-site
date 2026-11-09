@@ -1,6 +1,6 @@
 # Hoger marketing site
 
-Static landing page for [hoger.ai](https://hoger.ai/), deployed to Netlify.
+Static landing page for [hoger.ai](https://hoger.ai/) — the agent-orchestration harness. Deployed to Netlify.
 
 ## Local preview
 

@@ -3,266 +3,306 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoger — Be the smartest person in the room</title>
-  <meta name="description" content="Be the smartest person in the room. Five minutes a day. Meetings, messages, decisions—memorized. Walk in sharp.">
+  <title>Hoger | Perfect birds-eye view on agent orchestrations</title>
+  <meta name="description" content="Hoger is a harness for agent orchestrations. A birds-eye view of every subagent in a run. Align them with your goals and steer with great precision.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://hoger.ai/">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hoger.ai/">
-  <meta property="og:title" content="Hoger — Be the smartest person in the room">
-  <meta property="og:description" content="Five minutes a day. Meetings, messages, decisions—memorized. Walk in sharp.">
-  <meta property="og:image" content="https://hoger.ai/assets/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://hoger.ai/">
-  <meta name="twitter:title" content="Hoger — Be the smartest person in the room">
-  <meta name="twitter:description" content="Five minutes a day. Meetings, messages, decisions—memorized. Walk in sharp.">
-  <meta name="twitter:image" content="https://hoger.ai/assets/og-image.jpg">
-
+  <meta property="og:title" content="Hoger | Perfect birds-eye view on agent orchestrations">
+  <meta property="og:description" content="Hoger is a harness for agent orchestrations. A birds-eye view of every subagent in a run. Align them with your goals and steer with great precision.">
+  <meta property="og:image" content="https://hoger.ai/assets/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://us.i.posthog.com">
-  <link rel="preload" href="assets/styles.css?v=9" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --color-brand-400: #10b981;
-      --color-text-primary: #f0fdf4;
-      --color-text-secondary: #d1fae5;
-      --header-bg: rgba(0, 0, 0, 0.72);
-      --header-border: rgba(16, 185, 129, 0.22);
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Manrope", system-ui, sans-serif;
-      background: transparent;
-      color: var(--color-text-primary);
-      line-height: 1.6;
-    }
-    .brand-wordmark { font-family: "Syne", system-ui, sans-serif; font-weight: 700; }
-    .site-header {
-      position: fixed;
-      top: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1000;
-      background: var(--header-bg);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--header-border);
-      border-radius: 2rem;
-      padding: 0.5rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 75%;
-      max-width: 1200px;
-    }
-    .logo { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; color: inherit; }
-    .logo img { height: 32px; width: 32px; }
-    .brand-wordmark { font-size: 1.35rem; }
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding-top: 6rem;
-    }
-    .hero-brand .brand-wordmark { font-size: clamp(2.5rem, 8vw, 4.5rem); }
-    .hero h1 { font-size: clamp(1.75rem, 4.5vw, 2.65rem); margin: 1rem 0; }
-    .hero-lede { color: var(--color-text-secondary); max-width: 36rem; margin: 0 auto 1.5rem; }
-  </style>
-
-  <link rel="stylesheet" href="assets/styles.css?v=9">
-
-  <script>
-    window.__HOGER__ = {
-      site: "hoger",
-      hostname: location.hostname,
-      posthogKey: "phc_Ju4K4bBXyI79wej0tzGRdMnJTYovgalsSVigfm0clOJ",
-      posthogHost: "https://us.i.posthog.com",
-      redditPixelId: "a2_j6h7pu1ytag1",
-      waitlistSuccess: "You're on the list. We'll keep you posted."
-    };
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/platform/themes/editorial.css">
+  <link rel="stylesheet" href="/assets/platform/site.css">
+  <style id="site-brand-colors">
+:root {
+  --color-brand-500: #0f766e;
+  --color-brand-600: color-mix(in srgb, #0f766e 82%, #000000);
+  --color-brand-400: color-mix(in srgb, #0f766e 72%, #ffffff);
+  --color-brand-300: color-mix(in srgb, #0f766e 52%, #ffffff);
+  --color-brand-100: color-mix(in srgb, #0f766e 14%, #ffffff);
+  --color-brand-700: color-mix(in srgb, #0f766e 62%, #000000);
+  --color-brand-800: color-mix(in srgb, #0f766e 48%, #000000);
+  --brand-primary: #0f766e;
+  --button-border: color-mix(in srgb, #0f766e 38%, transparent);
+  --button-shadow: color-mix(in srgb, #0f766e 32%, transparent);
+  --badge-border: color-mix(in srgb, #0f766e 34%, transparent);
+  --nav-hover-bg: color-mix(in srgb, #0f766e 12%, transparent);
+}
+</style>
+  <link rel="preconnect" href="https://app.posthog.com">
 </head>
-<body>
-  <div class="bg-layer" aria-hidden="true">
-    <canvas id="plexus-canvas"></canvas>
-    <div class="bg-vignette"></div>
-  </div>
-
-  <header class="site-header">
+<body data-site="hoger" data-theme="editorial" data-hostname="hoger.ai">
+  <header class="site-header site-header--editorial">
     <a class="logo" href="#hero" aria-label="Hoger home">
-      <img src="logo.svg" alt="" width="32" height="32" loading="eager">
-      <span class="brand-wordmark">Hoger</span>
+      <img src="/assets/logo.svg" alt="" width="32" height="32" />
+      <span class="logo-word">Hoger</span>
     </a>
     <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">☰</button>
     <div class="nav-overlay" aria-hidden="true"></div>
     <nav id="primary-nav" class="nav">
-      <a href="#how">How it works</a>
-      <a href="#demo">Demo</a>
-      <a href="#launch">Launch</a>
-      <a href="#pricing">Pricing</a>
-      <a class="button" href="#waitlist" data-track-cta="nav_waitlist">Join waitlist</a>
+      <a href="#problem">Problem</a>
+<a href="#how">How it works</a>
+<a href="#use-cases">Who it’s for</a>
+<a href="#launch">Launch</a>
+      <a class="button nav-cta" href="#launch">Register for launch</a>
     </nav>
   </header>
-
-  <main>
-    <section id="hero" class="hero section--net">
-      <div class="hero-content">
-        <div class="hero-brand">
-          <img src="logo.svg" alt="" class="brand-logo-large" width="56" height="56">
-          <p class="brand-wordmark">Hoger</p>
-        </div>
-        <h1>Be the smartest person in the room.</h1>
-        <p class="hero-lede">Five minutes a day. Meetings, messages, decisions—memorized. Walk in sharp.</p>
-        <div class="hero-cta">
-          <a class="button" href="#waitlist" data-track-cta="hero_waitlist">Join the waitlist</a>
-          <a class="button button-secondary" href="#how" data-track-cta="hero_how">See how it works</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="demo" class="section section--solid">
-      <div class="container">
-        <h2>See it in action</h2>
-        <p class="section-intro">Hoger turns your workday into a daily quiz.</p>
-        <div class="demo-frame">
-          <iframe
-            class="demo-video"
-            src="https://www.youtube-nocookie.com/embed/-O3QoYKlfb0?autoplay=0&mute=0&controls=0&disablekb=1&fs=0&iv_load_policy=3&modestbranding=1&playsinline=1&rel=0&cc_load_policy=0&showinfo=0"
-            title="Hoger product demo"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section id="how" class="section section--net">
-      <div class="container">
-        <h2>The daily habit behind being sharp</h2>
-        <p class="section-intro">Five minutes that helps names, decisions, context, and commitments stick—so you show up ready.</p>
-        <div class="steps-grid">
-          <article class="step-card">
-            <span class="step-number">1</span>
-            <h3>Provide context and fine-tune what’s important</h3>
-            <p>Share the places you work—meeting notes, Slack or Teams, email—then dial in what matters so Hoger focuses on the details that count.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-number">2</span>
-            <h3>Take a five-minute quiz</h3>
-            <p>At the end of the day, answer focused questions covering what happened, who was involved, when it matters, where it belongs, and why it was decided.</p>
-          </article>
-          <article class="step-card">
-            <span class="step-number">3</span>
-            <h3>Strengthen what is slipping</h3>
-            <p>Get corrections with context, then see important details from previous days and weeks at the right time to lock them into memory.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="launch" class="section section--solid">
-      <div class="container">
-        <h2>Launching soon</h2>
-        <div class="launch-block">
-          <p class="launch-date" id="launch-date-local" aria-live="polite">Loading launch time…</p>
-          <div class="countdown" aria-label="Countdown to launch">
-            <div class="countdown-unit">
-              <span class="countdown-value" id="countdown-days">—</span>
-              <span class="countdown-label">Days</span>
-            </div>
-            <div class="countdown-unit">
-              <span class="countdown-value" id="countdown-hours">—</span>
-              <span class="countdown-label">Hours</span>
-            </div>
-            <div class="countdown-unit">
-              <span class="countdown-value" id="countdown-minutes">—</span>
-              <span class="countdown-label">Minutes</span>
-            </div>
-            <div class="countdown-unit">
-              <span class="countdown-value" id="countdown-seconds">—</span>
-              <span class="countdown-label">Seconds</span>
-            </div>
-          </div>
-          <div class="launch-actions">
-            <a class="button" href="https://luma.com/d4fxxyia" target="_blank" rel="noopener noreferrer" data-track-cta="launch_event">Register for launch event</a>
-            <p class="launch-note">Free online launch event — reserve your spot on Luma.</p>
+<section id="hero" class="hero hero--editorial">
+      <div class="hero-editorial">
+        <div class="hero-content">
+          <p class="eyebrow eyebrow-light">Your agents, your control</p>
+          <h1>Perfect birds-eye view<br>on agent orchestrations.</h1>
+          <p>A harness for the run. Align every subagent with your goals and steer with great precision.</p>
+          <div class="hero-actions">
+            <a href="#launch" class="button">Register for launch</a>
+            <a class="text-link" href="#how">How it works <span aria-hidden="true">→</span></a>
           </div>
         </div>
+        <div class="stage stage--lens" aria-hidden="true">
+    <div class="lens-scene">
+      <div class="lens-board"><article class="lens-card lens-card--0">
+        <span class="lens-spinner lens-spinner--0" aria-hidden="true"></span>
+        <p class="lens-card-status">running</p>
+        <p class="lens-card-name">Research A</p>
+        <p class="lens-card-detail">Facet scan</p>
+      </article><article class="lens-card lens-card--1">
+        <span class="lens-spinner lens-spinner--1" aria-hidden="true"></span>
+        <p class="lens-card-status">done</p>
+        <p class="lens-card-name">Research B</p>
+        <p class="lens-card-detail">Brief ready</p>
+      </article><article class="lens-card lens-card--2">
+        <span class="lens-spinner lens-spinner--2" aria-hidden="true"></span>
+        <p class="lens-card-status">waiting</p>
+        <p class="lens-card-name">Compare</p>
+        <p class="lens-card-detail">Needs children</p>
+      </article></div>
+      <div class="lens-loupe" aria-hidden="true">
+        <div class="lens-loupe-body">
+          <div class="lens-loupe-ring"></div>
+          <div class="lens-loupe-handle"></div>
+        </div>
+      </div>
+    </div>
+    <p class="stage-caption">Your agents, your control</p>
+  </div>
       </div>
     </section>
-
-    <section id="pricing" class="section section--net">
+<section class="proof" aria-label="Built to">
       <div class="container">
-        <h2>Simple pricing</h2>
-        <div class="pricing-block">
-          <p class="pricing-trial">Start with a 30-day free trial.</p>
-          <p class="pricing-amount">$16 <span>USD / month</span></p>
-          <p class="pricing-detail">After your trial, Hoger is $16 USD billed monthly. Cancel anytime.</p>
-          <a class="button" href="#waitlist" data-track-cta="pricing_waitlist">Join the waitlist</a>
+        <p class="proof-label">Built to</p>
+        <ul class="proof-list"><li>Watch</li><li>Interrogate</li><li>Replay</li><li>Track</li><li>Schedule</li><li>Spend</li></ul>
+      </div>
+    </section>
+<section id="problem" class="section problem">
+      <div class="container">
+        <p class="eyebrow">The problem</p>
+        <h2>The stack is running.<br>You’re guessing.</h2>
+        <div class="problem-copy"><p>Long orchestrations vanish into chat. You can’t see who’s stuck, what they tried, or how it ladders to the goal.</p><p>There’s no place to open an agent, ask why, and replay. Concurrent work collapses. Tokens move without a map.</p><p class="problem-close">Hoger is the harness. The swarm sits on a board you can scan, interrogate, and steer.</p></div>
+        <ul class="stat-row"><li>
+            <p class="stat-value">See it</p>
+            <p class="stat-body">One board for the whole stack — status, blockers, and what each agent needs.</p>
+            <p class="stat-source">Not a transcript you reconstruct later.</p>
+          </li><li>
+            <p class="stat-value">Ask why</p>
+            <p class="stat-body">Open any subagent. See what it did, why it did it, and what it produced.</p>
+            <p class="stat-source">Every agent still under the goal it serves.</p>
+          </li><li>
+            <p class="stat-value">Fix it</p>
+            <p class="stat-body">Replay a miss instead of restarting the swarm from scratch.</p>
+            <p class="stat-source">Nothing buried in scrollback.</p>
+          </li></ul>
+      </div>
+    </section>
+<section id="how" class="section how">
+      <div class="container">
+        <p class="eyebrow">How Hoger works</p>
+        <h2>See. Interrogate.<br>Direct.</h2>
+        <p class="section-intro">Three moves. One board.</p>
+        <div class="loop"><article class="loop-step">
+          <div class="loop-copy">
+            <p class="step-kicker">01 <span>/ See</span></p>
+            <h3>Orchestrations you can see.</h3>
+            <p>The harness shows the run: every subagent on the board, who is working, who is waiting, and how they fit together.</p>
+            <p class="built-for">Built for</p><ul class="chip-list"><li>The whole run</li><li>Every subagent</li><li>How they connect</li><li>Live</li></ul>
+          </div>
+          <figure class="loop-media">
+                <video src="/assets/watch.mp4" muted loop playsinline autoplay preload="metadata" aria-label="Screen recording of the board for a run"></video>
+              </figure>
+        </article><article class="loop-step">
+          <div class="loop-copy">
+            <p class="step-kicker">02 <span>/ Interrogate</span></p>
+            <h3>Open any agent.</h3>
+            <p>What it did, why, and what it produced. See where tokens go across the tree.</p>
+            <p class="built-for">Built for</p><ul class="chip-list"><li>What</li><li>Why</li><li>Findings</li><li>Tokens</li></ul>
+          </div>
+          <figure class="loop-media">
+                <video src="/assets/interrogate.mp4" muted loop playsinline autoplay preload="metadata" aria-label="Screen recording: opening an agent to see what it did and why"></video>
+              </figure>
+        </article><article class="loop-step">
+          <div class="loop-copy">
+            <p class="step-kicker">03 <span>/ Direct</span></p>
+            <h3>Replay. Aim higher.</h3>
+            <p>Wrong answer? Replay it. Keep every agent under the goal. Direct the leagues — don’t hope in the dark.</p>
+            <p class="built-for">Built for</p><ul class="chip-list"><li>Replay</li><li>Goal context</li><li>Control</li><li>Steer</li></ul>
+          </div>
+          <figure class="loop-media">
+                <video src="/assets/direct.mp4" muted loop playsinline autoplay preload="metadata" aria-label="Screen recording: replaying a miss and steering toward the goal"></video>
+              </figure>
+        </article></div>
+      </div>
+    </section>
+<section id="use-cases" class="section audiences">
+      <div class="container">
+        <p class="eyebrow">Who it’s for</p>
+        <h2>Anyone running a swarm<br>who won’t fly blind.</h2>
+        <p class="section-intro">Overnight trees to standing leagues you schedule and steer.</p>
+        <div class="audience-grid"><article class="audience-card">
+          <p class="audience-index">01</p>
+          <h3>Orchestration leads</h3>
+          <p>Watch long runs. Spot the agent that needs help before the goal stalls.</p>
+          <ul><li>Live watch</li><li>Blockers</li><li>Tracks</li></ul>
+        </article><article class="audience-card">
+          <p class="audience-index">02</p>
+          <h3>Stack builders</h3>
+          <p>Open each subagent — what it did and why — then replay the bad branch.</p>
+          <ul><li>Per-agent truth</li><li>Replay</li><li>Token map</li></ul>
+        </article><article class="audience-card">
+          <p class="audience-index">03</p>
+          <h3>Operators &amp; founders</h3>
+          <p>Frame every run with higher-order goals. Birds-eye view, schedules, hand on the swarm.</p>
+          <ul><li>Goals</li><li>Schedules</li><li>Control</li></ul>
+        </article></div>
+      </div>
+    </section>
+<section id="trust" class="section trust">
+      <div class="container">
+        <p class="eyebrow">Never in the dark</p>
+        <h2>Visibility is<br>the product.</h2>
+        <p class="section-intro">No stack hidden behind one chat bubble. The board is the contract: you see it, you direct it.</p>
+        <div class="trust-grid"><article class="trust-card">
+        <p class="trust-kicker">Watch</p>
+        <h3>Long runs stay put</h3>
+        <p>Hours or days on the board — not lost when you close a log tab.</p>
+      </article><article class="trust-card">
+        <p class="trust-kicker">Truth</p>
+        <h3>Interrogate &amp; replay</h3>
+        <p>Open any agent. Replay the miss instead of restarting the stack.</p>
+      </article><article class="trust-card">
+        <p class="trust-kicker">Spend</p>
+        <h3>Where tokens go</h3>
+        <p>Which branch is burning budget — before the invoice says so.</p>
+      </article><article class="trust-card">
+        <p class="trust-kicker">Aim</p>
+        <h3>Goals first</h3>
+        <p>Every agent hangs under the outcome you’re directing toward.</p>
+      </article></div>
+      </div>
+    </section>
+<section id="faq" class="section faq">
+      <div class="container faq-container">
+        
+        <h2>Questions, answered</h2>
+        <div class="faq-list"><details class="faq-item">
+        <summary>What is Hoger for?</summary>
+        <p>A harness for long agent orchestrations. See what each agent is doing, open it when needed, replay misses, and steer toward your goals.</p>
+      </details><details class="faq-item">
+        <summary>Can I bring my own agents?</summary>
+        <p>Yes. Hoger is the harness around the agents you already run. A run shows every subagent, how they fit together, and where you can step in.</p>
+      </details><details class="faq-item">
+        <summary>Can more than one orchestration run at once?</summary>
+        <p>Yes. Concurrent runs sit in their own lanes. You watch, schedule, and nudge each one.</p>
+      </details><details class="faq-item">
+        <summary>Can I replay one agent without restarting the run?</summary>
+        <p>Yes. Open the agent that missed, see what it did and why, and replay that branch. The rest of the run stays put.</p>
+      </details><details class="faq-item">
+        <summary>Can I see token spend?</summary>
+        <p>Yes. Spend across the nest, so you know the costly branch before the bill.</p>
+      </details><details class="faq-item">
+        <summary>What happens to a run that lasts all day?</summary>
+        <p>It stays on the board. Hours or days remain visible after you close the log.</p>
+      </details></div>
+      </div>
+    </section>
+<section id="launch" class="section launch-section closing">
+      <div class="container">
+        <p class="eyebrow eyebrow-light">Launch event</p>
+        <h2>Hoger launches<br>1 December.</h2>
+        <p class="launch-date">1 December 2026</p>
+        <p>Join the launch event — live walkthrough of the board, and early access for registrants. Leave your email and we’ll send the invite.</p>
+        <div class="countdown" data-countdown="2026-12-01T09:00:00+11:00" role="timer" aria-live="polite">
+          <div class="countdown-unit">
+          <span class="countdown-value" data-countdown-part="days">––</span>
+          <span class="countdown-label">days</span>
+        </div><div class="countdown-unit">
+          <span class="countdown-value" data-countdown-part="hours">––</span>
+          <span class="countdown-label">hours</span>
+        </div><div class="countdown-unit">
+          <span class="countdown-value" data-countdown-part="minutes">––</span>
+          <span class="countdown-label">minutes</span>
+        </div><div class="countdown-unit">
+          <span class="countdown-value" data-countdown-part="seconds">––</span>
+          <span class="countdown-label">seconds</span>
+        </div>
+        </div>
+        <dl class="launch-details"><div class="launch-detail">
+            <dt>When</dt>
+            <dd>1 December 2026, 9:00 AM AEDT</dd>
+          </div><div class="launch-detail">
+            <dt>Where</dt>
+            <dd>Online — link after you register</dd>
+          </div><div class="launch-detail">
+            <dt>What</dt>
+            <dd>Live product walkthrough + Q&amp;A</dd>
+          </div></dl>
+        <div class="demo-booking launch-register">
+          <h3 class="launch-register-title">Register for the launch</h3>
+          <form class="waitlist-form" data-waitlist-form data-subscribe-tag="hoger-launch" data-success-message="You&#39;re registered. We&#39;ll send the launch invite." novalidate>
+    <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <label for="email-waitlist-launch">Email address</label>
+    <input type="email" id="email-waitlist-launch" name="email" required placeholder="you@example.com" autocomplete="email">
+    <button type="submit" class="button waitlist-submit demo-button" data-waitlist-submit aria-busy="false">
+    <span class="waitlist-submit-default">Register for launch</span>
+    <span class="waitlist-submit-loading" aria-hidden="true">
+      <span class="waitlist-submit-spinner"></span>
+    </span>
+    <span class="waitlist-submit-success" aria-hidden="true">
+      <span class="waitlist-submit-check" aria-hidden="true">✓</span>
+      <span class="waitlist-submit-success-text"></span>
+    </span>
+  </button>
+    <p class="waitlist-message" role="status" aria-live="polite" hidden></p>
+  </form>
         </div>
       </div>
     </section>
-
-    <section id="waitlist" class="section section--solid">
-      <div class="container">
-        <h2>Start becoming the sharpest person in the room</h2>
-        <p class="section-intro">Join the Hoger waitlist for early access and product updates.</p>
-        <form class="waitlist-form" data-waitlist-form novalidate>
-          <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <label for="email-waitlist">Email address</label>
-          <input type="email" id="email-waitlist" name="email" required placeholder="you@example.com" autocomplete="email">
-          <button type="submit" class="button waitlist-submit" data-waitlist-submit aria-busy="false">
-            <span class="waitlist-submit-default">Join the waitlist</span>
-          </button>
-          <p class="waitlist-message" role="status" aria-live="polite" hidden></p>
-        </form>
-      </div>
-    </section>
-
-    <section id="founder" class="section section--net">
-      <div class="container">
-        <h2>Meet the founder</h2>
-        <div class="founder-content">
-          <div class="founder-image">
-            <img src="https://res.cloudinary.com/dwizhptot/image/upload/v1647900844/elliot-chapple-profile_2x_px7ase_euhn34.webp" alt="Elliot Chapple, Creator of Hoger" class="founder-photo" width="200" height="200" loading="lazy">
-          </div>
-          <div class="founder-info">
-            <h3>Elliot Chapple</h3>
-            <p class="founder-title">Creator</p>
-            <p class="founder-quote"><span class="quote-mark quote-mark-start">❝</span>Work moves fast—and the important details fade just as quickly. I built Hoger so five minutes at the end of your day turns meetings, messages, and decisions into lasting recall, ready when you need them tomorrow.<span class="quote-mark quote-mark-end">❞</span></p>
-            <div class="founder-cta">
-              <a href="https://www.linkedin.com/in/elliot-chapple-60560382/" class="button linkedin-button" target="_blank" rel="noopener noreferrer" data-track-cta="founder_linkedin">Connect on LinkedIn</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer section--solid">
+<footer class="site-footer">
     <div class="container">
       <nav class="footer-nav" aria-label="Footer">
         <a href="#hero">Home</a>
-        <a href="#how">How it works</a>
-        <a href="#demo">Demo</a>
-        <a href="#launch">Launch</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#waitlist">Waitlist</a>
+        <a href="#problem">Problem</a>
+<a href="#how">How it works</a>
+<a href="#use-cases">Who it’s for</a>
+<a href="#launch">Launch</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
       </nav>
       <p>© <span id="year"></span> Hoger. All rights reserved.</p>
-      <p class="deploy-stamp">Last deployed <time id="deployed-at"></time></p>
     </div>
   </footer>
-
-  <script type="module" src="assets/main.js?v=13"></script>
+  <script>
+    window.__LP__ = {
+      site: "hoger",
+      hostname: "hoger.ai",
+      posthogKey: "phc_Ju4K4bBXyI79wej0tzGRdMnJTYovgalsSVigfm0clOJ",
+      posthogHost: "https://app.posthog.com",
+      waitlistSuccess: "You're on the list. We'll reply with a time."
+    };
+  </script>
+  <script src="/assets/platform/site.js" defer></script>
 </body>
 </html>

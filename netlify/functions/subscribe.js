@@ -11,8 +11,9 @@ function json(data, status = 200) {
   };
 }
 
-function buildTags(utm) {
+function buildTags(utm, extraTag) {
   const tags = new Set(['site:hoger', 'hoger']);
+  if (extraTag && String(extraTag).trim()) tags.add(String(extraTag).trim());
   if (utm?.campaign) tags.add(`utm:${utm.campaign}`);
   if (utm?.source) tags.add(`ref:${utm.source}`);
   return [...tags];
@@ -98,7 +99,7 @@ exports.handler = async (event) => {
   }
 
   const utm = body.utm;
-  const tags = buildTags(utm);
+  const tags = buildTags(utm, body.tag);
   const ip = clientIp(event);
   const metadata = {
     slug: 'hoger',

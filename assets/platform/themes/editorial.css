@@ -921,7 +921,6 @@ body[data-theme="editorial"] .loop-media {
 }
 
 body[data-theme="editorial"] .loop-media:has(video) {
-  aspect-ratio: 16 / 9;
   background: #14161c;
 }
 
@@ -934,7 +933,7 @@ body[data-theme="editorial"] .loop-media video {
 }
 
 body[data-theme="editorial"] .loop-media video {
-  height: 100%;
+  height: auto;
   object-fit: contain;
 }
 

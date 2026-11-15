@@ -54,4 +54,4 @@ Canonical, OG, sitemap, and robots already use `https://hoger.ai/`.
 
 - `assets/bg-plexus.webp` — optimized background from reference art
 - `assets/og-image.jpg` — 1200×630 for OG/Twitter/Reddit ads
-- `logo.svg` / `favicon.svg` — brain mark from prototype, emerald recolor
+- `logo.svg` / `favicon.svg` — upward arrow on the emerald tile, used in the header and as the favicon
